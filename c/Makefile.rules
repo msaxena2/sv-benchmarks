@@ -221,7 +221,7 @@ $(LOCAL_BUILD_DIR)/%.oc: %.c
 		echo -n "."; \
 	fi
 	$(Verb) $(MKDIR) -p $(LOCAL_BUILD_DIR)
-	$(Verb) $(CC) $(CC.Flags) -c $< -o $@ -MP -MMD -MF $(LOCAL_BUILD_DIR)/$*.dc
+	$(Verb) $(CC) $(CC.Flags)  $< ../implementations.c -o $@  
 	$(Verb) $(TOUCH) $@
 
 $(LOCAL_BUILD_DIR)/%.oi: %.i
