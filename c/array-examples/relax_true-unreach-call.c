@@ -91,6 +91,7 @@ void __VERIFIER_assert(int cond) {
 }
 
 #include <stdlib.h>
+#include "../decls.h"
 
 _Bool is_relaxed_prefix(
   int pat[], unsigned long pat_length,

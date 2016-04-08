@@ -221,18 +221,27 @@ $(LOCAL_BUILD_DIR)/%.oc: %.c
 		echo -n "."; \
 	fi
 	$(Verb) $(MKDIR) -p $(LOCAL_BUILD_DIR)
-	$(Verb) $(CC) $(CC.Flags)  $< ../implementations.c -o $@  
+	$(Verb) $(CC) $(CC.Flags)   $< ../implementations.c -o $@ 
 	$(Verb) $(TOUCH) $@
-
-$(LOCAL_BUILD_DIR)/%.oi: %.i
+$(LOCAL_BUILD_DIR)/%.o.cil.c: %.cil.c
 	@if [ $(REPORT_CC_FILE) -eq 1 ]; then \
 		echo "$(CC) building $(LOCAL_BUILD_DIR_SUFFIX)/$<" ; \
 	elif [ $(REPORT_CC_FILE) -eq 2 ]; then \
 		echo -n "."; \
 	fi
 	$(Verb) $(MKDIR) -p $(LOCAL_BUILD_DIR)
-	$(Verb) $(CC) $(CC.Flags) -c $< -o $@ -MP -MMD -MF $(LOCAL_BUILD_DIR)/$*.di
+	$(Verb) $(CC) $(CC.Flags)   $< ../implementations.c -o $@ 
 	$(Verb) $(TOUCH) $@
+#../implementations.c -o $@  
+#$(LOCAL_BUILD_DIR)/%.oi: %.i
+#	@if [ $(REPORT_CC_FILE) -eq 1 ]; then \
+#		echo "$(CC) building $(LOCAL_BUILD_DIR_SUFFIX)/$<" ; \
+#	elif [ $(REPORT_CC_FILE) -eq 2 ]; then \
+#		echo -n "."; \
+#	fi
+#	$(Verb) $(MKDIR) -p $(LOCAL_BUILD_DIR)
+#	$(Verb) $(CC) $(CC.Flags) -c $< -o $@ -MP -MMD -MF $(LOCAL_BUILD_DIR)/$*.di
+#	$(Verb) $(TOUCH) $@
 
 # All the objects have these additional dependencies
 $(C_OBJS) $(I_OBJS): $(ADDITIONAL_BUILD_DEPS)

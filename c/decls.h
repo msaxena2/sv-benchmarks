@@ -3,3 +3,4 @@ int __VERIFIER_nondet_int();
 _Bool __VERIFIER_nondet_bool();
 void* __VERIFIER_nondet_pointer();
 void __VERIFIER_assume(int);
+unsigned long __VERIFIER_nondet_ulong();

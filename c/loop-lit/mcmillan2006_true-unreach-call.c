@@ -1,7 +1,7 @@
 // Source: Ken McMillan: "Lazy Abstraction With Interpolants", CAV 2006
 
 #include "assert.h"
-
+#include <stdlib.h>
 int main() {
     int n = __VERIFIER_nondet_int();
     __VERIFIER_assume(0 <= n && n <= 1000);
