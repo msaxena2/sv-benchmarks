@@ -48,11 +48,11 @@ DIRS += loops
 DIRS += memory-unsafe
 # DIRS += memsafety /* Needs Analysis */
 # DIRS += memsafety-ext /* Needs Analysis */
-DIRS += ntdrivers
-DIRS += ntdrivers-simplified
+# DIRS += ntdrivers
+# DIRS += ntdrivers-simplified
 DIRS += product-lines
 DIRS += pthread
-DIRS += pthread-atomic
+# DIRS += pthread-atomic /* Needs Analysis */
 DIRS += pthread-ext
 DIRS += pthread-lit
 DIRS += pthread-wmm
@@ -64,16 +64,16 @@ ifeq ($(CC_IS_CLANG)$(CLANG_BUILD_HACK),11)
 else
   DIRS += regression
 endif
-DIRS += seq-mthreaded
-DIRS += seq-pthread
+#  DIRS += seq-mthreaded
+# DIRS += seq-pthread
 DIRS += signedintegeroverflow-regression
 DIRS += ssh
 DIRS += ssh-simplified
 DIRS += systemc
-DIRS += termination-15
-DIRS += termination-crafted
+# DIRS += termination-15 /* alloca */
+# DIRS += termination-crafted  /* alloa */
 DIRS += termination-crafted-lit
-DIRS += termination-libowfat
+# DIRS += termination-libowfat /*Allca */
 DIRS += termination-memory-alloca
 DIRS += termination-numeric
 DIRS += termination-restricted-15
